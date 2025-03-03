@@ -6,4 +6,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /:/host:ro,rslave
     ports:
-      - 8000:8000
+      - 8080:8080

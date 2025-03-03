@@ -1,0 +1,9 @@
+services:
+  image-advisor:
+    build: .
+    container_name: image-advisor
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /:/host:ro,rslave
+    ports:
+      - 8000:8000

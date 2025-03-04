@@ -15,7 +15,7 @@ EXPOSE 8080
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["/usr/bin/run.sh"]
 
-HEALTHCHECK --interval=30s \
+HEALTHCHECK --interval=5m \
+    --start-period=5m \
     --start-interval=10s \
-    --start-period=30s \
     CMD pgrep run.sh && curl -f http://127.0.0.1:8080/metrics

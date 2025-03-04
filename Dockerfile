@@ -9,6 +9,7 @@ COPY lighttpd.conf /etc/lighttpd/lighttpd.conf
 COPY --chmod=755 run.sh /usr/bin/run.sh
 COPY --chmod=755 exporter.sh /usr/bin/exporter.sh
 
+ENV INTERVAL=30
 EXPOSE 8080
 
 ENTRYPOINT ["/sbin/tini", "--"]

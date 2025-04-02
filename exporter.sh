@@ -25,7 +25,7 @@ health_status='
 data=$(
     curl --silent --show-error --request GET \
     --unix-socket /var/run/docker.sock \
-    "http://localhost/system/df"
+    "http://localhost/v1.46/system/df"
 )
 
 
@@ -84,4 +84,3 @@ generate_metric 'iadvisor_container_healthcheck_state' \
                 "$health_status; .Containers[] | [.Id, .Names[0], (.Status | health_status)] | @tsv" \
                 '$metric{id="$1",name="$2"} $3' \
                 "$data"
-

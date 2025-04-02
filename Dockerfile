@@ -18,4 +18,4 @@ CMD ["/usr/bin/run.sh"]
 HEALTHCHECK --interval=5m \
     --start-period=5m \
     --start-interval=10s \
-    CMD pgrep run.sh && curl -f http://127.0.0.1:8080/metrics
+    CMD pgrep run.sh && curl -f http://127.0.0.1:8080/metrics || exit 1
